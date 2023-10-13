@@ -31,7 +31,5 @@ export class AppComponent {
     address: "Patras, Greece"
   };
 
-
-
-
+  
 }
