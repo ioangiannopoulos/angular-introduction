@@ -4,11 +4,18 @@ import { PersonComponent } from './person/person.component';
 import { Person } from './interfaces/person';
 import { PersonAltComponent } from './person-alt/person-alt.component';
 import { EventBindComponent } from './event-bind/event-bind.component';
+import { OutputDemoComponent } from './output-demo/output-demo.component';
+import { PersonCardComponent } from './person-card/person-card.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, PersonComponent, PersonAltComponent, EventBindComponent],
+  imports: [CommonModule,
+           PersonComponent,
+           PersonAltComponent, 
+           EventBindComponent, 
+           OutputDemoComponent,
+          PersonCardComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -35,6 +42,7 @@ export class AppComponent {
   users: Person[] = [
 
     {
+      photoURL: 'https://i.pravatar.cc/?img=1',
 
       givenName: 'John',
 
@@ -49,6 +57,7 @@ export class AppComponent {
     },
 
     {
+      photoURL: 'https://i.pravatar.cc/?img=2',
 
       givenName: 'Jane',
 
@@ -63,6 +72,7 @@ export class AppComponent {
     },
 
     {
+      photoURL: 'https://i.pravatar.cc/?img=3',
 
       givenName: 'Jim',
 
@@ -77,6 +87,7 @@ export class AppComponent {
     },
 
     {
+      photoURL: 'https://i.pravatar.cc/?img=4',
 
       givenName: 'Jill',
 
@@ -91,6 +102,7 @@ export class AppComponent {
     },
 
     {
+      photoURL: 'https://i.pravatar.cc/?img=5',
 
       givenName: 'Jake',
 
@@ -105,6 +117,7 @@ export class AppComponent {
     },
 
     {
+      photoURL: 'https://i.pravatar.cc/?img=6',
 
       givenName: 'Judy',
 
@@ -119,6 +132,7 @@ export class AppComponent {
     },
 
     {
+      photoURL: 'https://i.pravatar.cc/?img=7',
 
       givenName: 'Jack',
 
@@ -133,6 +147,7 @@ export class AppComponent {
     },
 
     {
+      photoURL: 'https://i.pravatar.cc/?img=8',
 
       givenName: 'Julie',
 
@@ -147,6 +162,7 @@ export class AppComponent {
     },
 
     {
+      photoURL: 'https://i.pravatar.cc/?img=9',
 
       givenName: 'Jerry',
 
@@ -161,6 +177,7 @@ export class AppComponent {
     },
 
     {
+      photoURL: 'https://i.pravatar.cc/?img=10',
 
       givenName: 'June',
 
@@ -174,5 +191,16 @@ export class AppComponent {
 
     },
 
-  ]
+  ];
+
+  sentUser: Person | undefined
+
+  onDeleteUser(i: number) {
+    this.users.splice(i, 1);
+  }
+
+  onSendUser(user: Person) {
+    console.log(user);
+    this.sentUser = user;
+  }
 }
