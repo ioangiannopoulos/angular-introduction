@@ -14,6 +14,7 @@ export class TemplateDrivenFormComponent {
   @Output() person = new EventEmitter<Person>();
 
   onSubmit(form: any) {
-    this.person.emit(form.value as Person)
+    this.person.emit(form.value as Person);
+    form.reset();
   }
 }
