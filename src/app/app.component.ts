@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.appService.getAllUsers().subscribe((users) => {
-      this.users = users
+      this.users = users;
       console.log(this.users);
     })
   }
