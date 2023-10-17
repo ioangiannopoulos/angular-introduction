@@ -16,7 +16,7 @@ export class ReactiveFormComponent {
   form = new FormGroup({
     givenName: new FormControl('', Validators.required),
     surName: new FormControl('', Validators.required),
-    age: new FormControl('0', [Validators.required, Validators.min(18), Validators.max(120)]),
+    age: new FormControl(0, [Validators.required, Validators.min(18), Validators.max(120)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     address: new FormControl('', Validators.required),
     photoURL: new FormControl('')
@@ -24,6 +24,5 @@ export class ReactiveFormComponent {
 
   onSubmit() {
     this.person.emit(this.form.value as Person);
-    this
   }
 }
