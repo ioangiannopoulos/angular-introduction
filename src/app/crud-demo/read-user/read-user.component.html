@@ -1,1 +1,11 @@
-<p>read-user works!</p>
+<div class="form-group">
+    <label class="form-label">
+        Serach for User Id
+    </label>
+    <input type="number" class="form-control" #userId >
+    <div *ngIf="userNotFound" class="text-danger">User not found</div>
+    <button (click)="onClick()" class="btn btn-primary mt-2">
+        Search
+    </button>
+</div>
+<app-person-card *ngIf="foundUser" [person]="foundUser"></app-person-card>
