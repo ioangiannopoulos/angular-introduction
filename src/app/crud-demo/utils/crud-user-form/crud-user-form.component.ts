@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormComponent } from 'src/app/reactive-form/reactive-form.component';
 import { Person } from 'src/app/interfaces/person';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
